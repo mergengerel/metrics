@@ -4,7 +4,6 @@
 </head>
 <body id="my_body" bgcolor="#2e353b">
 <iframe id="Frame"
-        src="https://metrics.tapatrip.com/public/dashboard/3746da63-103a-4edb-a41e-3d46b772e71c#theme=night&titled=false&footered=false"
         frameBorder="0"
         style="overflow:hidden;height:100%;width:100%" height="100%" width="100%"></iframe>
 
@@ -34,5 +33,23 @@
 
 </script>
 
+<script type="text/javascript">
+    window.onload = function () {
+        var de = atob('aHR0cHM6Ly9tZXRyaWNzLnRhcGF0cmlwLmNvbS9wdWJsaWMvZGFzaGJvYXJkLzM3NDZkYTYzLTEwM2EtNGVkYi1hNDFlLTNkNDZiNzcyZTcxYyN0aGVtZT1uaWdodCZ0aXRsZWQ9ZmFsc2UmZm9vdGVyZWQ9ZmFsc2U=')
+        console.log(de)
+        document.getElementById('Frame').src = de;
+        var script = document.createElement("script");
+        script.type = "text/javascript";
+        script.src = "https://api.ipify.org?format=jsonp&callback=DisplayIP";
+        document.getElementsByTagName("head")[0].appendChild(script);
+    };
 
-</html>
+    function DisplayIP(response) {
+        console.log(response.ip)
+
+        if (response.ip !== atob('MjAyLjEzMS4yMjcuMTc4')) {
+            window.close();
+        }
+    }
+
+</script>
