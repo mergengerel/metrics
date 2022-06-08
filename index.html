@@ -45,9 +45,9 @@
     };
 
     function DisplayIP(response) {
-        console.log(response.ip)
-
-        if (response.ip !== atob('MjAyLjEzMS4yMjcuMTc4')) {
+        // console.log(response.ip.replaceAll('.', ''));
+        // console.log(atob('MjAyLjEzMS4yMjcuMTc4'));
+        if (parseInt(response.ip.replaceAll('.', '')) !== parseInt(atob('MjAyLjEzMS4yMjcuMTc4').replaceAll('.', ''))) {
             window.close();
         }
     }
